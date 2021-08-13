@@ -167,13 +167,10 @@ def grpc_deps():
     if "boringssl" not in native.existing_rules():
         http_archive(
             name = "boringssl",
-            # Use github mirror instead of https://boringssl.googlesource.com/boringssl
-            # to obtain a boringssl archive with consistent sha256
-            sha256 = "19870fcdbdfc61217ad814077483347a5b2bf4b3bbb5f6c983edac7856a40bbb",
-            strip_prefix = "boringssl-bcc01b6c66b1c6fa2816b108e50a544b757fbd7b",
+            sha256 = "22d6673aed5e9c7dedae33a694b0185cb31c33fe0c289fb78aefa6c3c257ad1b",
+            strip_prefix = "boringssl-reverb_fix",
             urls = [
-                "https://storage.googleapis.com/grpc-bazel-mirror/github.com/google/boringssl/archive/bcc01b6c66b1c6fa2816b108e50a544b757fbd7b.tar.gz",
-                "https://github.com/google/boringssl/archive/bcc01b6c66b1c6fa2816b108e50a544b757fbd7b.tar.gz",
+                "https://github.com/qstanczyk/boringssl/archive/reverb_fix.tar.gz",
             ],
         )
 
